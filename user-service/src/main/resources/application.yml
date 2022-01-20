@@ -1,0 +1,28 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/userdb?useSSL=false&serverTimezone=Asia/Baku
+    username: root
+    password: 1511
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      - hibernate:
+          - format_sql: true
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+    instance:
+      hostname: localhost
+  

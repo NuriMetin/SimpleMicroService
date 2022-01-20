@@ -1,0 +1,27 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/departmentdb?useSSL=false&serverTimezone=Asia/Baku
+    username: root
+    password: 1511
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      - hibernate:
+          - format_sql: true
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+    instance:
+      hostname: localhost
